@@ -1,5 +1,9 @@
-function SearchBar() {
+interface Props {
+  name : string;
+  onNameChange: (name: string) => void;
 
+}
+function SearchBar({name, onNameChange}: Props) {
     return (
         <div className="w-full max-w-xs flex flex-col gap-2">
             <label className="input validator">
@@ -21,6 +25,8 @@ function SearchBar() {
     placeholder="Entrez le nom de l'utilisateur GitHub"
     pattern="[A-Za-z][A-Za-z0-9\-]*"
     title="Only letters, numbers or dash"
+    value={name}
+    onChange={(e) => onNameChange(e.target.value)}
   />
 </label>
 <p className="validator-hint">
