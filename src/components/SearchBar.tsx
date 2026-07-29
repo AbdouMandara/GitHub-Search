@@ -1,12 +1,18 @@
+import type GitHubUser from "../types/GitHubUser";
+
 interface Props {
   name : string;
   onNameChange: (name: string) => void;
   rechercher : any;
-
+  changerTypeUser : React.Dispatch<React.SetStateAction<GitHubUser | undefined>>;
 }
-function SearchBar({name, onNameChange, rechercher}: Props) {
+function SearchBar({name, onNameChange, rechercher, changerTypeUser}: Props) {
 
-    return (
+  function mise_a_jour(){
+    changerTypeUser(undefined)
+    rechercher()
+  }
+  return (
   <div className="join">
     <div>
       <label className="input validator join-item">
@@ -26,7 +32,7 @@ function SearchBar({name, onNameChange, rechercher}: Props) {
       </label>
       <div className="validator-hint hidden">Entrez au moins 1 lettre</div>
     </div>
-  <button className="btn btn-neutral join-item" disabled={name.trim() ==='' ? true : false} onClick={rechercher}>Chercher</button>
+  <button className="btn btn-neutral join-item" disabled={name.trim() ==='' ? true : false} onClick={mise_a_jour}>Chercher</button>
 </div>
     )   
 }
