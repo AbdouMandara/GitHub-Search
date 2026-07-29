@@ -1,7 +1,7 @@
 // async function getData(nom_user:string) {
-export async function GET(nom_user:string) {
+export async function GET(nom_user:string, num_page:number=1) {
   if(nom_user !== '') {
-  const url = `https://api.github.com/search/users?q=${encodeURIComponent(nom_user)}`;
+  const url = `https://api.github.com/search/users?q=${encodeURIComponent(nom_user)}&per_page=5&page=${num_page}`;
   try {
     const reponse = await fetch(url,
       {

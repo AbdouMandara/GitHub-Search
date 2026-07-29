@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import SearchBar from './components/SearchBar'
 import GET from './api/GitHubData'
 import type GitHubUser from './types/GitHubUser'
