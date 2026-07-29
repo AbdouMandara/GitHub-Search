@@ -4,7 +4,8 @@ export default interface GitHubUser {
     name : string;
     bio : string;
     avatar_url : string;
-    followers : string;
+    followers : number;
+    following : number;
     score : number;
     html_url : string;
     public_repos : number;
