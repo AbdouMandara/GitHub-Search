@@ -1,5 +1,4 @@
 // async function getData(nom_user:string) {
-// 
 export async function GET(nom_user:string) {
   if(nom_user !== '') {
   const url = `https://api.github.com/search/users?q=${encodeURIComponent(nom_user)}`;

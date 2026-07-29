@@ -13,7 +13,7 @@ function AccountList({users, isDisplay}: AccountListProps) {
                 <div key={user.id}>
                     <ul className="list bg-base-100 rounded-box shadow-md">
                         <li className="list-row">
-                            <div><img className="size-10 rounded-box" src=`${user.img_avatar}`/> </div>
+                            <div><img className="size-10 rounded-box" src={user.avatar_url}/> </div>
                             <div>
                             <div>{user.login}</div>
                             <div className="text-xs uppercase font-semibold opacity-60">Remaining Reason</div>

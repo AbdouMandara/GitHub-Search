@@ -3,7 +3,7 @@ export default interface GitHubUser {
     login:string;
     nom : string;
     bio : string;
-    img_avatar : string;
+    avatar_url : string;
     followers : number;
     following : number;
     url_user : string;
