@@ -4,6 +4,7 @@ import GET from './api/GitHubData'
 import type GitHubUser from './types/GitHubUser'
 import AccountList from './components/AccountList'
 import PaginationButtons from './components/PaginationButtons'
+import Header from './components/Header'
 
 function App() {
   const [name, setName] = useState<string>('')
@@ -22,7 +23,10 @@ function App() {
 
   
   return (
+    <>
+    <Header />
     <div className='w-screen h-full flex flex-col justify-center items-center p-6 gap-4'>
+
       <SearchBar name={name} onNameChange={setName} rechercher={fetchData}/>
       {isLoading ? (
         <span className="loading loading-spinner loading-xl"></span>
@@ -33,6 +37,7 @@ function App() {
         </>
       )}
     </div>
+      </>
   )
 }
 
