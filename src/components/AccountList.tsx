@@ -29,9 +29,10 @@ function AccountList({users, isDisplay}: AccountListProps) {
         }
         </div>
     )
-    }else{
-        return null
     }
+    
+    return null
+    
 }
 
 export default AccountList

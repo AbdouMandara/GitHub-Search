@@ -1,0 +1,121 @@
+1
+PaginationButtons.tsx:12 Cannot update a component (`App`) while rendering a different component (`PaginationButtons`). To locate the bad setState() call inside `PaginationButtons`, follow the stack trace as described in https://react.dev/link/setstate-in-render
+scheduleUpdateOnFiber @ react-dom_client.js?v=4b053ba3:7934
+dispatchSetStateInternal @ react-dom_client.js?v=4b053ba3:5161
+dispatchSetState @ react-dom_client.js?v=4b053ba3:5133
+changement_page @ PaginationButtons.tsx:12
+PaginationButtons @ PaginationButtons.tsx:25
+react_stack_bottom_frame @ react-dom_client.js?v=4b053ba3:12866
+renderWithHooks @ react-dom_client.js?v=4b053ba3:4213
+updateFunctionComponent @ react-dom_client.js?v=4b053ba3:5569
+beginWork @ react-dom_client.js?v=4b053ba3:6140
+runWithFiberInDEV @ react-dom_client.js?v=4b053ba3:851
+performUnitOfWork @ react-dom_client.js?v=4b053ba3:8429
+workLoopSync @ react-dom_client.js?v=4b053ba3:8325
+renderRootSync @ react-dom_client.js?v=4b053ba3:8309
+performWorkOnRoot @ react-dom_client.js?v=4b053ba3:7957
+performWorkOnRootViaSchedulerTask @ react-dom_client.js?v=4b053ba3:9059
+performWorkUntilDeadline @ react-dom_client.js?v=4b053ba3:36
+<PaginationButtons>
+exports.jsxDEV @ react_jsx-dev-runtime.js?v=4b053ba3:193
+App @ App.tsx:32
+react_stack_bottom_frame @ react-dom_client.js?v=4b053ba3:12866
+renderWithHooksAgain @ react-dom_client.js?v=4b053ba3:4268
+renderWithHooks @ react-dom_client.js?v=4b053ba3:4219
+updateFunctionComponent @ react-dom_client.js?v=4b053ba3:5569
+beginWork @ react-dom_client.js?v=4b053ba3:6140
+runWithFiberInDEV @ react-dom_client.js?v=4b053ba3:851
+performUnitOfWork @ react-dom_client.js?v=4b053ba3:8429
+workLoopSync @ react-dom_client.js?v=4b053ba3:8325
+renderRootSync @ react-dom_client.js?v=4b053ba3:8309
+performWorkOnRoot @ react-dom_client.js?v=4b053ba3:7957
+performWorkOnRootViaSchedulerTask @ react-dom_client.js?v=4b053ba3:9059
+performWorkUntilDeadline @ react-dom_client.js?v=4b053ba3:36
+PaginationButtons.tsx:14 1 a baisse
+PaginationButtons.tsx:18 1 a augmente
+PaginationButtons.tsx:14 1 a baisse
+PaginationButtons.tsx:18 1 a augmente
+GitHubData.ts:18 1
+PaginationButtons.tsx:14 2 a baisse
+PaginationButtons.tsx:18 2 a augmente
+PaginationButtons.tsx:14 2 a baisse
+PaginationButtons.tsx:18 2 a augmente
+GitHubData.ts:18 2
+PaginationButtons.tsx:14 3 a baisse
+PaginationButtons.tsx:18 3 a augmente
+PaginationButtons.tsx:14 3 a baisse
+PaginationButtons.tsx:18 3 a augmente
+GitHubData.ts:18 1
+PaginationButtons.tsx:14 4 a baisse
+PaginationButtons.tsx:18 4 a augmente
+PaginationButtons.tsx:14 4 a baisse
+PaginationButtons.tsx:18 4 a augmente
+GitHubData.ts:18 3
+PaginationButtons.tsx:14 5 a baisse
+PaginationButtons.tsx:18 5 a augmente
+PaginationButtons.tsx:14 5 a baisse
+PaginationButtons.tsx:18 5 a augmente
+GitHubData.ts:18 1
+GitHubData.ts:18 2
+PaginationButtons.tsx:14 6 a baisse
+PaginationButtons.tsx:18 6 a augmente
+PaginationButtons.tsx:14 6 a baisse
+PaginationButtons.tsx:18 6 a augmente
+GitHubData.ts:18 4
+PaginationButtons.tsx:14 7 a baisse
+PaginationButtons.tsx:18 7 a augmente
+PaginationButtons.tsx:14 7 a baisse
+PaginationButtons.tsx:18 7 a augmente
+GitHubData.ts:18 5
+GitHubData.ts:18 2
+PaginationButtons.tsx:14 8 a baisse
+PaginationButtons.tsx:18 8 a augmente
+PaginationButtons.tsx:14 8 a baisse
+PaginationButtons.tsx:18 8 a augmente
+GitHubData.ts:18 3
+GitHubData.ts:18 4
+PaginationButtons.tsx:14 9 a baisse
+PaginationButtons.tsx:18 9 a augmente
+PaginationButtons.tsx:14 9 a baisse
+PaginationButtons.tsx:18 9 a augmente
+GitHubData.ts:18 6
+PaginationButtons.tsx:14 10 a baisse
+PaginationButtons.tsx:18 10 a augmente
+PaginationButtons.tsx:14 10 a baisse
+PaginationButtons.tsx:18 10 a augmente
+GitHubData.ts:18 1
+GitHubData.ts:18 7
+PaginationButtons.tsx:14 11 a baisse
+PaginationButtons.tsx:18 11 a augmente
+PaginationButtons.tsx:14 11 a baisse
+PaginationButtons.tsx:18 11 a augmente
+GitHubData.ts:18 2
+PaginationButtons.tsx:14 12 a baisse
+PaginationButtons.tsx:18 12 a augmente
+PaginationButtons.tsx:14 12 a baisse
+PaginationButtons.tsx:18 12 a augmente
+GitHubData.ts:18 3
+GitHubData.ts:18 4
+GitHubData.ts:18 5
+PaginationButtons.tsx:14 13 a baisse
+PaginationButtons.tsx:18 13 a augmente
+PaginationButtons.tsx:14 13 a baisse
+PaginationButtons.tsx:18 13 a augmente
+GitHubData.ts:18 8
+GitHubData.ts:18 9
+PaginationButtons.tsx:14 14 a baisse
+PaginationButtons.tsx:18 14 a augmente
+PaginationButtons.tsx:14 14 a baisse
+PaginationButtons.tsx:18 14 a augmente
+GitHubData.ts:18 6
+GitHubData.ts:18 7
+GitHubData.ts:18 10
+PaginationButtons.tsx:14 15 a baisse
+PaginationButtons.tsx:18 15 a augmente
+PaginationButtons.tsx:14 15 a baisse
+PaginationButtons.tsx:18 15 a augmente
+GitHubData.ts:18 11
+PaginationButtons.tsx:14 16 a baisse
+PaginationButtons.tsx:18 16 a augmente
+PaginationButtons.tsx:14 16 a baisse
+PaginationButtons.tsx:18 16 a augmente
