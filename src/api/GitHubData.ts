@@ -15,7 +15,6 @@ export async function GET(nom_user:string, page:number) {
       throw new Error(`Statut de réponse : ${reponse.status}`);
     }
     const resultat = await reponse.json()
-    console.log(page)
     return resultat.items
   } catch (erreur: any) {
     console.error(erreur.message)
@@ -24,4 +23,26 @@ export async function GET(nom_user:string, page:number) {
     return
 }
 
-export default GET
+export async function GET_USER(login:string) {
+  const url = `https://api.github.com/users/${encodeURIComponent(login)}`;
+  try {
+    const reponse = await fetch(url,
+      {
+        headers: {
+          // 'Authorization': `token ${process.env.VITE_GITHUB_TOKEN}`
+          'Authorization': `token ${import.meta.env.VITE_GITHUB_TOKEN}`
+        }
+      }
+    )
+    if (!reponse.ok) {
+      throw new Error(`Statut de réponse : ${reponse.status}`);
+    }
+    console.log('Cette methh sexecute')
+    const resultat = await reponse.json()
+    console.log('resultat de GET : ' + resultat)
+    return resultat
+  }catch (erreur: any) {
+      console.error(erreur.message)
+  }
+}
+export default {GET, GET_USER}

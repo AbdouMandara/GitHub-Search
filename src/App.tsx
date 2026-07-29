@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SearchBar from './components/SearchBar'
-import GET from './api/GitHubData'
+import {GET, GET_USER} from './api/GitHubData'
 import type GitHubUser from './types/GitHubUser'
 import AccountList from './components/AccountList'
 import PaginationButtons from './components/PaginationButtons'
@@ -14,15 +14,28 @@ function App() {
   const [isDisplay, setIsDisplay] = useState<boolean>(false)
   const [num_page, setNum_page] = useState<number>(1)
   const [userClique, setUserClique] = useState<GitHubUser | undefined>()
+  const [userDetails, setUserDetails] = useState<GitHubUser | undefined>()
   // 
+  const fetchDataUserClicked = async () =>{
+    if(userClique){
+      const bio = userClique?.login
+      const result = await GET_USER(bio)
+      setUserDetails(result)
+    }
+  }
+  useEffect(()=>{
+    if(userClique?.login){
+      fetchDataUserClicked()
+    }
+  }, [userClique?.login])
+
   const fetchData = async (page = num_page) => {
     setIsLoading(true)
     const result = await GET(name, page)
-    setList_users(result)
+    setList_users(result) 
     setIsLoading(false)
     setIsDisplay(true)
   }
-
   
   return (
     <>
@@ -34,8 +47,7 @@ function App() {
       ):(
         <>
         {userClique ? (
-          <AccountItem user={userClique} />
-        
+          <AccountItem user={userDetails} />
         ):(
           <>
             <AccountList users={list_users} isDisplay={isDisplay} attraper_id_clique={setUserClique}/>
