@@ -3,8 +3,9 @@ import type GitHubUser from '../types/GitHubUser'
 interface AccountListProps {
     users: GitHubUser[] | null;
     isDisplay: boolean;
+    attraper_id_clique : React.Dispatch<React.SetStateAction<GitHubUser | undefined>>
 }
-function AccountList({users, isDisplay}: AccountListProps) {
+function AccountList({users, isDisplay, attraper_id_clique}: AccountListProps) {
     if (isDisplay) {
     return (
         <div className="w-full max-w-xs flex flex-col items-center justify-center gap-2" >
@@ -18,7 +19,7 @@ function AccountList({users, isDisplay}: AccountListProps) {
                                 <div>{user.login}</div>
                                 <a className="text-xs uppercase font-semibold opacity-60" href={user.html_url} target='blank'>Voir GitHub</a>
                             </div>
-                            <button className="btn  btn-ghost">Voir plus</button>
+                            <button className="btn btn-ghost" onClick={()=> attraper_id_clique(user)}>Voir plus</button>
                         </li>
                     </ul>
                 </div>
