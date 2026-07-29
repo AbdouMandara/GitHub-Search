@@ -5,6 +5,7 @@ interface Props {
 
 }
 function SearchBar({name, onNameChange, rechercher}: Props) {
+
     return (
   <div className="join">
     <div>
@@ -25,9 +26,9 @@ function SearchBar({name, onNameChange, rechercher}: Props) {
       </label>
       <div className="validator-hint hidden">Entrez au moins 1 lettre</div>
     </div>
-  <button className="btn btn-neutral join-item" onClick={rechercher}>Chercher</button>
+  <button className="btn btn-neutral join-item" disabled={name.trim() ==='' ? true : false} onClick={rechercher}>Chercher</button>
 </div>
-    )
-    
+    )   
 }
+
 export default SearchBar
