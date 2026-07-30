@@ -8,7 +8,7 @@ function AccountItem({user}: Props) {
     {user && 
     <div className="mockup-browser bg-base-100 w-full overflow-hidden border border-base-300">
       <div className="mockup-browser-toolbar">
-        <div className="input">{user.html_url}</div>
+        <div className="input py-2">{user.html_url}</div>
       </div>
       {/* Card ou on affiche les infos */}
       <div className="card card-side bg-base-100 p-6 shadow-sm">

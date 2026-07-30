@@ -1,13 +1,10 @@
 import type GitHubUser from '../types/GitHubUser'
-// import AccountItem from './AccountItem'
 interface AccountListProps {
     users: GitHubUser[] | null;
     isDisplay: boolean;
     attraper_id_clique : React.Dispatch<React.SetStateAction<GitHubUser | undefined>>
 }
 function AccountList({users, isDisplay, attraper_id_clique}: AccountListProps) {
-
-
     if (isDisplay) {
     return (
         <div className="w-full max-w-xs flex flex-col items-center justify-center gap-2" >
@@ -28,14 +25,11 @@ function AccountList({users, isDisplay, attraper_id_clique}: AccountListProps) {
             ))
         ):(
             <p>Aucun utilisateur trouvé</p>
-        )
-        }
+        )}
         </div>
     )
     }
-    
     return null
-    
 }
 
 export default AccountList
