@@ -15,7 +15,7 @@ function AccountList({users, isDisplay, attraper_id_clique}: AccountListProps) {
                         <li className="list-row">
                             <div><img className="size-10 rounded-box" src={user.avatar_url}/> </div>
                             <div>
-                                <div>{user.login}</div>
+                                <div>{user.login.length>8 ? user.login.slice(0, 8)+'...' : user.login}</div>
                                 <a className="text-xs uppercase font-semibold opacity-60" href={user.html_url} target='blank'>Voir GitHub</a>
                             </div>
                             <button className="btn btn-ghost" onClick={()=> attraper_id_clique(user)}>Voir plus</button>
