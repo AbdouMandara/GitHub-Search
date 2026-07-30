@@ -12,13 +12,11 @@ function PaginationButtons({num_page, modif_page, isDisplay, rechercher, nbre_co
             let new_page = num_page - 1
             modif_page(new_page)
             rechercher(new_page)
-            console.log(num_page + ' a baisse')
         }
         function addition_page():any{
             let new_page = num_page + 1
             modif_page(new_page)
             rechercher(new_page)
-            console.log(num_page + ' a augmente')
         }
 
     

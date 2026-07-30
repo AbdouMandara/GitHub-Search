@@ -37,9 +37,7 @@ export async function GET_USER(login:string) {
     if (!reponse.ok) {
       throw new Error(`Statut de réponse : ${reponse.status}`);
     }
-    console.log('Cette methh sexecute')
     const resultat = await reponse.json()
-    console.log('resultat de GET : ' + resultat)
     return resultat
   }catch (erreur: any) {
       console.error(erreur.message)
