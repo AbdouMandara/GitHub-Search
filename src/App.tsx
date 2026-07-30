@@ -6,6 +6,7 @@ import AccountList from './components/AccountList'
 import PaginationButtons from './components/PaginationButtons'
 import Header from './components/Header'
 import AccountItem from './components/AccountItem'
+import Footer from './components/Footer'
 
 function App() {
   const [name, setName] = useState<string>('')
@@ -39,14 +40,14 @@ function App() {
     const total_account = result.total_count //recuperer le nombre de compte obtenu
     setTotal_compte_fetched(total_account)
     setList_users(items) 
-    setIsLoading(false)
+    setIsLoading(false) 
     setIsDisplay(true)
   }
   
   return (
     <>
     <Header />
-    <div className='w-screen h-full flex flex-col justify-center items-center p-6 gap-4'>
+    <div className='w-screen h-full relative flex flex-col justify-center items-center p-6 gap-4'>
       <SearchBar name={name} onNameChange={setName} changerTypeUser={setUserClique} onNumPageChange={setNum_page} rechercher={fetchData}/>
       {isLoading ? (
         <span className="loading loading-spinner loading-xl"></span>
@@ -63,6 +64,7 @@ function App() {
         </>
       )}
     </div>
+    <Footer />
       </>
   )
 }
