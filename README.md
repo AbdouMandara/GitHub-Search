@@ -1,75 +1,77 @@
-# React + TypeScript + Vite
+# GitHub Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Une petite application React + TypeScript + Vite pour rechercher des utilisateurs GitHub et avoir leur infos.
 
-Currently, two official plugins are available:
+## Description
+![Image de presentation des infos d'un user](./img/8_Apprentissage_react.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+Ce projet permet de :
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- chercher des utilisateurs GitHub par login
+- afficher une liste de résultats avec avatar et lien vers le profil
+- naviguer entre les pages de résultats
+- afficher les détails d'un utilisateur sélectionné
+- utiliser l'API GitHub avec un token personnalisé via variable d'environnement
 
-## Expanding the ESLint configuration
+L'interface est construite avec Tailwind CSS et DaisyUI.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Fonctionnalités
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- barre de recherche avec validation
+- pagination (`Page précédente` / `Page suivante`)
+- liste des comptes GitHub retournés
+- fiche détaillée d'un utilisateur sélectionné
+- lien direct vers le profil GitHub officiel
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Ouvrir un terminal dans le dossier du projet :
 
+```bash
+cd 'GitHub Search'
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Installer les dépendances :
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
+
+3. Créer un fichier `.env` à la racine du projet :
+
+```env
+VITE_GITHUB_TOKEN=your_github_personal_access_token
+```
+
+> Le fichier `.env` est déjà ignoré par Git (`.gitignore`). Ne partage pas ton token.
+
+## Exécution
+
+```bash
+npm run dev
+```
+
+Puis ouvrir l'URL fournie par Vite dans le navigateur.
+
+## Scripts disponibles
+
+- `npm run dev` : démarrer le serveur de développement
+- `npm run build` : compiler le projet
+- `npm run preview` : prévisualiser la version buildée
+- `npm run lint` : lancer ESLint
+
+## Structure principale
+
+- `src/App.tsx` : composant principal
+- `src/api/GitHubData.ts` : logique d'appel à l'API GitHub
+- `src/components/` : composants UI
+- `src/types/GitHubUser.ts` : type TypeScript des données utilisateur
+
+## Remarques
+
+- Sans token ou en cas de limite d'API, les requêtes GitHub peuvent être bloquées.
+- Utilise un token GitHub personnel pour améliorer la fiabilité des requêtes.
+- Le projet s'appuie sur `import.meta.env.VITE_GITHUB_TOKEN` pour le token.
+
+Fait par [AbdouMandara](https://github.com/AbdouMandara)
