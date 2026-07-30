@@ -15,7 +15,7 @@ export async function GET(nom_user:string, page:number) {
       throw new Error(`Statut de réponse : ${reponse.status}`);
     }
     const resultat = await reponse.json()
-    return resultat.items
+    return resultat
   } catch (erreur: any) {
     console.error(erreur.message)
   }

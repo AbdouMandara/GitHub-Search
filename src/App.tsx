@@ -15,7 +15,9 @@ function App() {
   const [num_page, setNum_page] = useState<number>(1)
   const [userClique, setUserClique] = useState<GitHubUser | undefined>()
   const [userDetails, setUserDetails] = useState<GitHubUser | undefined>()
-  // 
+  const [total_compte_fetched, setTotal_compte_fetched] = useState<number>(0)
+  
+  // Fonction pour fetch les infos du user github sur lequel le user a clique  
   const fetchDataUserClicked = async () =>{
     if(userClique){
       const bio = userClique?.login
@@ -29,10 +31,14 @@ function App() {
     }
   }, [userClique?.login])
 
+// Fonction pour fetch les users github selon le nom que le user recherche  
   const fetchData = async (page = num_page) => {
     setIsLoading(true)
     const result = await GET(name, page)
-    setList_users(result) 
+    const items = result.items //Recuperer les differents user de la recherche
+    const total_account = result.total_count //recuperer le nombre de compte obtenu
+    setTotal_compte_fetched(total_account)
+    setList_users(items) 
     setIsLoading(false)
     setIsDisplay(true)
   }
@@ -51,7 +57,7 @@ function App() {
         ):(
           <>
             <AccountList users={list_users} isDisplay={isDisplay} attraper_id_clique={setUserClique}/>
-            <PaginationButtons num_page={num_page} modif_page={setNum_page} isDisplay={isDisplay} rechercher={fetchData}/>
+            <PaginationButtons num_page={num_page} modif_page={setNum_page} isDisplay={isDisplay} rechercher={fetchData} nbre_compte={total_compte_fetched}/>
           </>
         )}
         </>
