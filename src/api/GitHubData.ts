@@ -6,8 +6,8 @@ export async function GET(nom_user:string, page:number) {
     const reponse = await fetch(url,
       {
         headers: {
-          // 'Authorization': `token ${process.env.VITE_GITHUB_TOKEN}`
-          'Authorization': `token ${import.meta.env.VITE_GITHUB_TOKEN}`
+          'Authorization': `token ${process.env.VITE_GITHUB_TOKEN}`
+          //'Authorization': `token ${import.meta.env.VITE_GITHUB_TOKEN}`
         }
       }
     )
@@ -29,8 +29,8 @@ export async function GET_USER(login:string) {
     const reponse = await fetch(url,
       {
         headers: {
-          // 'Authorization': `token ${process.env.VITE_GITHUB_TOKEN}`
-          'Authorization': `token ${import.meta.env.VITE_GITHUB_TOKEN}`
+          'Authorization': `token ${process.env.VITE_GITHUB_TOKEN}`
+          //'Authorization': `token ${import.meta.env.VITE_GITHUB_TOKEN}`
         }
       }
     )
