@@ -5,12 +5,15 @@ interface Props {
   onNameChange: (name: string) => void;
   rechercher : any;
   changerTypeUser : React.Dispatch<React.SetStateAction<GitHubUser | undefined>>;
+  onNumPageChange : React.Dispatch<React.SetStateAction<number>>;
 }
-function SearchBar({name, onNameChange, rechercher, changerTypeUser}: Props) {
+function SearchBar({name, onNameChange, rechercher, changerTypeUser, onNumPageChange}: Props) {
 
   function mise_a_jour(){
     changerTypeUser(undefined)
-    rechercher()
+    const new_page = 1
+    onNumPageChange(new_page)
+    rechercher(new_page)
   }
   return (
   <div className="join">

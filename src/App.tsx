@@ -31,7 +31,7 @@ function App() {
     }
   }, [userClique?.login])
 
-// Fonction pour fetch les users github selon le nom que le user recherche  
+  // Fonction pour fetch les users github selon le nom que le user recherche  
   const fetchData = async (page = num_page) => {
     setIsLoading(true)
     const result = await GET(name, page)
@@ -47,7 +47,7 @@ function App() {
     <>
     <Header />
     <div className='w-screen h-full flex flex-col justify-center items-center p-6 gap-4'>
-      <SearchBar name={name} onNameChange={setName} rechercher={fetchData} changerTypeUser={setUserClique}/>
+      <SearchBar name={name} onNameChange={setName} changerTypeUser={setUserClique} onNumPageChange={setNum_page} rechercher={fetchData}/>
       {isLoading ? (
         <span className="loading loading-spinner loading-xl"></span>
       ):(
