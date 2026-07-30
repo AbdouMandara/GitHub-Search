@@ -6,7 +6,7 @@ import AccountList from './components/AccountList'
 import PaginationButtons from './components/PaginationButtons'
 import Header from './components/Header'
 import AccountItem from './components/AccountItem'
-import Footer from './components/Footer'
+
 
 function App() {
   const [name, setName] = useState<string>('')
@@ -64,7 +64,6 @@ function App() {
         </>
       )}
     </div>
-    <Footer />
       </>
   )
 }
